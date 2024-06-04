@@ -1,0 +1,36 @@
+<%- include('../templates/header', {titulo: "Productos " }) %>
+    <% if ( !error ) { %>
+        <form action="/products/<%= data[0].id %>?_method=PUT" method="post" >
+            <div class="mb-3">
+                <label for="id" class="form-label">ID</label>
+                <input type="text" id="id" class="form-control" disabled value="<%= data[0].id %>">
+            </div>
+
+            <div class="mb-3"></div>
+            <label for="username" class="form-label">username</label>
+            <input type="text" id="nombre" class="form-control" value="<%= data[0].username %>">
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="text" id="password" class="form-control" value="<%= data[0].password %>">
+            </div>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" id="nombre" class="form-control" value="<%= data[0].nombre %>">
+            </div>
+            <div class="mb-3">
+                <label for="apellidos" class="form-label">Apellido</label>
+                <input type="text" id="apellidos" class="form-control" value="<%= data[0].apellidos %>">
+            </div>
+            <div class="mb-3">
+                <label for="telefono" class="form-label">Telefono</label>
+                <input type="number" id="telefono" class="form-control" value="<%= data[0].telefono %>">
+            </div>
+            <br><br>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="submit">Update</button>
+            </div>
+
+        </form>
+    <%}%>
+<%- include('../templates/footer') %>
